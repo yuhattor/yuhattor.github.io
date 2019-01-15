@@ -142,6 +142,12 @@ Bosh とは VMWareが開発を行っているOSSの分散システム構成管�
 
 開発者は、Azure Container Instances (ACI) を使用することで、サーバーを管理することなく Azure でコンテナーを簡単に実行できるようになります。  開発者はコンテナーを実行する VM の種類を選択できます。  ACI で GPU 対応のコンテナーがサポートされるようになり、開発者が機械学習に必要な集中的なジョブを実行できるようになったことをお知らせいたします。
 
+
+チュートリアルは[こちら](https://docs.microsoft.com/ja-jp/azure/container-instances/container-instances-gpu)
+
+追加の制限事項:GPU リソースは、コンテナー グループを仮想ネットワークにデプロイするときには使用できません。
+
+
 ---
 ### [サーバーレスコミュニティライブラリ](https://azure.microsoft.com/ja-jp/updates/serverless-community-library-is-in-preview/)
 
@@ -218,7 +224,7 @@ API Management 消費者階層のユーザーは異なるレベルでサブス�
 ---
 ### [API Management の独自のキャッシュ機能がプレビュー段階です ](https://azure.microsoft.com/ja-jp/updates/api-management-bring-your-own-cache-public-preview/)
 
-独自のキャッシュ機能で、消費者階層における API Management と外部の Redis 互換のキャッシュを使用することができるようになります。 キャッシュ機能は 外部の API Management 消費者階層では利用できないため、独自のキャッシュ機能によって API Management をサーバーレスな環境内でより良い性能を引き出すために使うことができます。
+独自のキャッシュ機能で、消費者階層における API Management と外部の Redis 互換のキャッシュを使用することができるようになります。 キャッシュ機能は API Management コンサンプションプランでは利用できないため、独自のキャッシュ機能によって API Management をサーバーレスな環境内でより良い性能を引き出すために使うことができます。
 
 このプレビュー機能は、最初に API Management 消費者階層で利用可能となり、2019 年 1 月末までにその他の API Management 階層にも拡張されます。
 
@@ -241,10 +247,19 @@ Time Series Insights は、IoT データの価値を活用してビジネスク�
  - 資産ベースのデータ分析情報と豊富なアドホック データ分析を組み合わせ、ビジネスならびにオペレーション インテリジェンスを推進する、大幅に強化されたユーザー体験を提供します。
  - 高度な機械学習と Databricks や Spark, Jupyter notebooks などの分析ツールを統合し、時系列データ上の課題を新たな手法で解決するのに役立てることができます。
 
+
+##### Time Series Insights について
+IoT 分析情報用のフル マネージドでエンドツーエンドのソリューションです。豊富なコンテキスト情報を付加され、時系列に合わせて最適化された IoT データを取り込んで格納し、これに対してクエリを実行します。資産ベースのデータ分析情報と豊富でインタラクティブなアドホック データ分析に強力な視覚化を使用します。
+https://azure.microsoft.com/ja-jp/services/time-series-insights/
+
 ---
 ### [Azure Stream Analytics on IoT Edge が公開されました](https://azure.microsoft.com/ja-jp/updates/azure-stream-analytics-on-iot-edge-generally-available/)
-
 Azure Stream Analytics on IoT Edge が一般公開されました。この新機能では、Microsoft 独自のストリーミング技術がクラウドだけでなくデバイスでも利用できるようになります。Azure Stream Analytics on IoT Edge は、同一の馴染み深いプログラム言語および統一管理ポータルを利用しながら、リアルタイムでデータを分析する簡単な方法を提供します。Azure Stream Analytics on IoT Edge は、2019 年 2 月 1 日まで無料でご利用いただけます。新しい価格モデルは、2019 年 2 月 1 日以降に適用可能となります。大規模展開 (デバイス 5,000 個以上) 用のカスタム価格設定もご利用いただけます。
+
+Azure Stream Analytics on IoT Edge を使用すると
+- デバイス上で Azure IoT Edge を使用してストリーム処理ジョブを実行できるようになります。Azure Stream Analytics でストリーム処理ジョブを作成し、作成したジョブを Azure IoT Edge が実行されているデバイスへ Azure IoT Hub 経由で展開します。
+- クラウド独自のストリーミング技術のすべてのメリットがデバイスに拡張されます。これにより、IoT デバイス側で複合イベント処理 (CEP) を実行し、デバイスまたはゲートウェイ上で複数のデータ ストリームを分析できます。
+2019 年 2 月 1 日より後は、$1/デバイス/月
 
 ---
 ### [Azure IoT リモート監視の新しい更新プログラム](https://azure.microsoft.com/ja-jp/updates/new-updates-to-azure-iot-remote-monitoring/)
@@ -256,9 +271,12 @@ Azure IoT リモート監視ソリューション アクセラレータに対す
 - デバイスの自動管理を用いてデバイスの更新プログラムを管理する。  
 - Azure Time Series Insights を用いてデバイス データを可視化する。 
 
----
-### [Azure IoT デバイス シミュレーションの新しい更新プログラム](https://azure.microsoft.com/ja-jp/updates/new-updates-to-azure-iot-device-simulation/)
+##### Microsoft Azure IoT solution accelerators
+モノのインターネット (IoT) の一般的なシナリオ向けに自在にカスタマイズできるソリューションを、テンプレートを使って作成します。—プロセス効率の向上、より良いカスタマー エクスペリエスの提供、新たな収入源の創出など、分析情報に基づく新たな形でビジネスを集約しましょう
+https://azure.microsoft.com/en-us/features/iot-accelerators/
 
+---
+### [Azure IoT Device Simulation のアップデート](https://azure.microsoft.com/ja-jp/updates/new-updates-to-azure-iot-device-simulation/)
 デバイス シミュレーションを使用すると、実物と同様な外観を持ち、同様に動作するシミュレートされたデバイスの構築が容易になります。デバイス シミュレーションを使用して、シミュレートされたデバイスのデータを収集、処理、分析、および操作することで、ほぼエンド ツー エンドで対象のソリューションをテストできます。シミュレートされたデバイスによって収集中のデータを、対象のソリューションでどの程度適切に処理、管理、および表示できるかを評価します。
 
  - データが実際のものであるかどうかが重要ではなく、システム内のデータの流れの確認のみが必要な場合、サンプル デバイスとサンプル シミュレーションを使用して直ちに実行を開始できます。
@@ -266,6 +284,8 @@ Azure IoT リモート監視ソリューション アクセラレータに対す
  - 実際のデバイスの動作をシミュレートすることで、ソリューションが期待どおりに機能することを検証します。JavaScript を使用してデバイスの複雑な動作をスクリプト化し、できる限り最も正確な、シミュレートされたデバイスのテレメトリが確保されます。
  - 通常時、ピーク時、およびピーク時を超える負荷条件をシミュレートすることによって、対象ソリューションへの信頼を深めることができます。
  - ユーザー固有のニーズを満たすようにオープン ソース コードを変更することで、デバイスのシミュレーションをカスタマイズします。
+
+https://www.azureiotsolutions.com/Accelerators#sdssolutions/new/device-simulation
 ---
 class: middle
 # その他
