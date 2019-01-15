@@ -1,0 +1,17 @@
+{
+  "name": "phantomcrawler",
+  "version": "1.0.0",
+  "description": "crawl azure update page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "yuhattor",
+  "license": "ISC",
+  "dependencies": {
+    "node-html-parser": "^1.1.11",
+    "phantom": "^6.0.3",
+    "pprint": "0.0.1"
+  }
+}
