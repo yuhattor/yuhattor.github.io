@@ -176,6 +176,12 @@ job, tasks と書いてある部分をクリックして、設定に行きます
 
 <img src='screenshots/Screen Shot 2019-01-20 at 23.50.27.png' /> 
 ---
+### 28-2 . デプロイメントスロットの設定を開きます
+Azure DevOps Project においては、テンプレートデプロイの際に、ARM Template で環境ごと作るテンプレートが適用されています。
+２回目以降のデプロイでは必要ないため、Disable にします。
+
+<img src='screenshots/Screen Shot 2019-01-21 at 18.42.46.png' /> 
+---
 
 ### 29 . Azure Portal で App Service を開きます
 <img src='screenshots/Screen Shot 2019-01-20 at 23.51.07.png' /> 
