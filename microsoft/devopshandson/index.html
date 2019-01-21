@@ -183,92 +183,126 @@ Save します、Save & Queue を選択してしまうと、ビルドパイプ�
 <img src='screenshots/Screen Shot 2019-01-20 at 23.45.47.png' /> 
 ---
 
-### 24 . 
+### 24 . パイプラインの承認者を設定
+承認者が承認するまで、リリースパイプラインがスタートされないようにします。
 
 <img src='screenshots/Screen Shot 2019-01-20 at 23.47.41.png' /> 
 ---
 
-### 25 . 
+### 25 . パイプラインの承認者を設定
+承認者を設定します。 今回は承認者に自分のメールアドレスを設定します。
+
 <img src='screenshots/Screen Shot 2019-01-20 at 23.48.29.png' /> 
 ---
 
-### 26 . 
+### 26 . 設定をセーブします
 <img src='screenshots/Screen Shot 2019-01-20 at 23.49.21.png' /> 
 ---
 
-### 27 . 
+### 27 . リリースの設定をします
+job, tasks と書いてある部分をクリックして、設定に行きます
+
 <img src='screenshots/Screen Shot 2019-01-20 at 23.49.56.png' /> 
 ---
 
-### 28 . 
+### 28 . デプロイメントスロットの設定を開きます
+現在は Production のみが選択できます
+
 <img src='screenshots/Screen Shot 2019-01-20 at 23.50.27.png' /> 
 ---
+### 28-2 . デプロイメントスロットの設定を開きます
+Azure DevOps Project においては、テンプレートデプロイの際に、ARM Template で環境ごと作るテンプレートが適用されています。
+２回目以降のデプロイでは必要ないため、Disable にします。
 
-### 29 . 
+<img src='screenshots/Screen Shot 2019-01-21 at 18.42.46.png' /> 
+---
+
+### 29 . Azure Portal で App Service を開きます
 <img src='screenshots/Screen Shot 2019-01-20 at 23.51.07.png' /> 
 ---
 
-### 30 . 
+### 30 . 新しくスロットを追加します
 <img src='screenshots/Screen Shot 2019-01-20 at 23.53.29.png' /> 
 ---
 
-### 31 . 
+### 31 . DevOps に戻りスロット設定をします
+リリースするデプロイメントスロットを選択することができるようになっているので、スロットを選択します
+
 <img src='screenshots/Screen Shot 2019-01-20 at 23.55.03.png' /> 
 ---
 
-### 32 . 
+### 32 . 変更をセーブ
+変更をセーブします
 <img src='screenshots/Screen Shot 2019-01-20 at 23.56.02.png' /> 
 ---
 
-### 33 . 
+### 33 . 改めてデプロイ
+これでデプロイからリリースのパイプラインを作成することができたので、もう一度 Index.cshtml を変更して、改めてデプロイします。
+
 <img src='screenshots/Screen Shot 2019-01-20 at 23.57.54.png' /> 
 ---
 
-### 34 . 
+### 34 . prod ブランチにデプロイ
+今回は prod のブランチにデプロイします。ちゃんと設定されていれば、prod ブランチにpush したら、それをトリガーにパイプラインの処理が始まり、ビルド終了後にApproval メールが送信され、承認後に Web App の qa スロットにアプリケーションがデプロイされます。
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.00.55.png' /> 
 ---
 
-### 35 . 
+### 35 . 処理が始まったことを確認
+Pipelines > Builds で処理が始まったことを確認します。
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.01.39.png' /> 
 ---
 
-### 36 . 
+### 36 . 処理の中断を確認
+ビルドが終了したら、 リリースパイプラインにいき、Pending Approval となって、処理が止まっていることを確認します
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.05.42.png' /> 
 ---
 
-### 37 . 
+### 37 . メールを開き確認
+メールボックスに Approval メールがきているので確認します。もし、ハンズオン用のサブスクリプションで試している場合は、メールの機能がオンになっていないため、メールが届きません。その場合は直接 Pipelines > Release > 該当のリリースをクリックして、直接承認します 
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.08.13.png' /> 
 ---
 
-### 38 . 
+### 38 . Approve をクリック
+確認してから承認します
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.08.53.png' /> 
 ---
 
-### 39 . 
+### 39 . コメントを書き込みます
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.09.17.png' /> 
 ---
 
-### 40 . 
+### 40 . プロセスが再開されたことを確認します
 <img src='screenshots/Screen Shot 2019-01-21 at 0.09.50.png' /> 
 ---
 
-### 41 . 
+### 41 . qa 環境を確認
+qa 環境にデプロイされていることの確認をします。
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.15.23.png' /> 
 ---
 
-### 42 . 
+### 42 . qa スロットにいき、リンクをクリックします。
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.15.52.png' /> 
 ---
 
-### 43 . 
+### 43 . 設定が反映されていることを確認します。
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.23.43.png' /> 
 ---
 
-### 44 . 
+### 44 . 正常に確認できたら、スロットスワッピングをします。
+
 <img src='screenshots/Screen Shot 2019-01-21 at 0.26.46.png' /> 
 ---
 
-### 45 . 
+### 45 . 本番環境に環境がデプロイされていることを確認します。
 <img src='screenshots/Screen Shot 2019-01-21 at 0.28.07.png' /> 
 ---
 
